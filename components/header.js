@@ -1,19 +1,13 @@
-import { useMemo } from "react";
+import Link from "next/link";
 
-const Header = ({ hamburger, logoOpacity }) => {
-  const topContainerStyle = useMemo(() => {
-    return {
-      opacity: logoOpacity,
-    };
-  }, [logoOpacity]);
-
+const Header = ({ hamburger }) => {
   return (
     <header className="self-stretch bg-gray-white h-[98px] flex flex-row py-[22px] px-20 box-border items-center justify-center sticky w-full top-[0] [background:white] z-[2] text-center text-5xl text-primary-500 font-body-regular-600 lg:pl-10 lg:pr-10 lg:box-border md:pl-6 md:pr-6 md:box-border">
-      <div
-        className="flex-1 flex flex-row items-center justify-between"
-        style={topContainerStyle}
-      >
-        <div className="flex flex-row items-center justify-center gap-[8px]">
+      <div className="flex-1 flex flex-row items-center justify-between">
+        <Link
+          href="/"
+          className="flex flex-row items-center justify-center gap-[8px]"
+        >
           <img className="relative w-11 h-11" alt="" src="/houseline.svg" />
           <div className="flex flex-col items-start justify-start">
             <div className="relative leading-[24px] font-semibold">REIS</div>
@@ -21,19 +15,57 @@ const Header = ({ hamburger, logoOpacity }) => {
               Real State
             </div>
           </div>
-        </div>
+        </Link>
         <div className="flex flex-row items-center justify-end gap-[36px] text-sm text-primary-900 sm:flex">
           <div className="flex flex-row items-start justify-start gap-[30px] lg:hidden">
-            <div className="relative leading-[22px]">HOME</div>
-            <div className="relative leading-[22px]">ABOUT US</div>
-            <div className="relative leading-[22px]">OUR AGENTS</div>
-            <div className="relative leading-[22px] font-semibold">
+            <Link
+              href="/"
+              className="relative leading-[22px] text-primary-900 "
+            >
+              HOME
+            </Link>
+            <Link
+              href="/about"
+              className="relative leading-[22px] text-primary-900 "
+            >
+              ABOUT US
+            </Link>
+            <Link
+              href="/agents"
+              className="relative leading-[22px] text-primary-900 "
+            >
+              OUR AGENTS
+            </Link>
+            <Link
+              href="/properties"
+              className="relative leading-[22px] font-semibold text-primary-900 "
+            >
               PROPERTIES
-            </div>
-            <div className="relative leading-[22px]">GALLERY</div>
-            <div className="relative leading-[22px]">BLOG</div>
-            <div className="relative leading-[22px]">CONTACT US</div>
-            <div className="relative leading-[22px]">SEARCH</div>
+            </Link>
+            <Link
+              href="/gallery"
+              className="relative leading-[22px] text-primary-900 "
+            >
+              GALLERY
+            </Link>
+            <Link
+              href="/blog"
+              className="relative leading-[22px] text-primary-900 "
+            >
+              BLOG
+            </Link>
+            <Link
+              href="/contact"
+              className="relative leading-[22px] text-primary-900 "
+            >
+              CONTACT US
+            </Link>
+            <Link
+              href="/search"
+              className="relative leading-[22px] text-primary-900 "
+            >
+              SEARCH
+            </Link>
           </div>
           {!hamburger && (
             <button className="cursor-pointer [border:none] p-0 bg-[transparent] hidden flex-row items-center justify-center lg:flex">

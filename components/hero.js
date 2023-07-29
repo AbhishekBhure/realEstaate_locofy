@@ -1,38 +1,14 @@
 import { useCallback } from "react";
 import "antd/dist/antd.min.css";
 import { Menu, Dropdown, Button } from "antd";
-import {
-  DownOutlined,
-  ArrowLeftOutlined,
-  ArrowRightOutlined,
-  CalendarOutlined,
-  CheckOutlined,
-  ClockCircleOutlined,
-  CloseOutlined,
-  DeleteOutlined,
-  EditOutlined,
-  ExclamationCircleOutlined,
-  HeartOutlined,
-  LeftOutlined,
-  LockOutlined,
-  MailOutlined,
-  PaperClipOutlined,
-  PhoneOutlined,
-  QuestionCircleOutlined,
-  ReloadOutlined,
-  RightOutlined,
-  SearchOutlined,
-  SendOutlined,
-  ShareAltOutlined,
-  UserOutlined,
-} from "@ant-design/icons";
+import { DownOutlined } from "@ant-design/icons";
 import { useRouter } from "next/router";
 
 const Hero = () => {
   const router = useRouter();
 
   const onSearchCTAClick = useCallback(() => {
-    router.push("/");
+    router.push("/properties");
   }, [router]);
 
   return (
@@ -68,7 +44,7 @@ const Hero = () => {
                   Locations
                 </div>
                 <Dropdown
-                  overlay={
+                  menu={
                     <Menu>
                       {[
                         { value: "New York" },
@@ -99,7 +75,7 @@ const Hero = () => {
                 </div>
                 <Dropdown
                   className="self-stretch"
-                  overlay={
+                  menu={
                     <Menu>
                       {[
                         { value: "Studio apartments" },
@@ -131,7 +107,7 @@ const Hero = () => {
                 </div>
                 <Dropdown
                   className="self-stretch"
-                  overlay={
+                  menu={
                     <Menu>
                       {[
                         { value: "$500-$2000" },

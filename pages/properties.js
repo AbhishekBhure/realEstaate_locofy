@@ -6,8 +6,22 @@ import Header from "../components/header";
 import PropertiesGridContainer from "../components/properties-grid-container";
 import Footer from "../components/footer";
 import { useEffect, useState } from "react";
+import Link from "next/link";
 
-const defaultOrder = [];
+const defaultOrder = [
+  {
+    key: "1",
+    label: <a onClick={(e) => e.preventDefault()}>Popular Properties</a>,
+  },
+  {
+    key: "2",
+    label: <a onClick={(e) => e.preventDefault()}>Latest Properties</a>,
+  },
+  {
+    key: "3",
+    label: <a onClick={(e) => e.preventDefault()}>Recomanded Properties</a>,
+  },
+];
 
 const PropertiesGridView = () => {
   const client = createClient(
@@ -19,9 +33,9 @@ const PropertiesGridView = () => {
 
   useEffect(() => {
     const fetchProperties = async () => {
-      const result = await client.from("properties").select("*");
+      const result = await client.from("Properties").select("*");
 
-      console.log(setProperties(result.data));
+      setProperties(result.data);
     };
 
     fetchProperties();
@@ -33,7 +47,7 @@ const PropertiesGridView = () => {
         <div className="flex flex-col items-center justify-start gap-[12px]">
           <div className=" leading-[72px] font-semibold">Properties</div>
           <div className=" text-base leading-[24px] text-whitesmoke-200 font-body-regular-600">
-            <span>{`Home / `}</span>
+            <Link href="/" className="text-gray-white">{`Home / `}</Link>
             <span className="font-medium text-gray-white">Properties</span>
           </div>
         </div>
