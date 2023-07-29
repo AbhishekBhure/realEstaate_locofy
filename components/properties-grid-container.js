@@ -10,6 +10,7 @@ const PropertiesGridContainer = ({ allProperties }) => {
             imgUrl={property.image}
             title={property.title}
             name={property.name}
+            price={property.price}
           />
         ))}
       </div>
