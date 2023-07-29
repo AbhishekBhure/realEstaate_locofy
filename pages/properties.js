@@ -52,7 +52,7 @@ const PropertiesGridView = () => {
           </div>
         </div>
       </div>
-      <div className=" flex flex-col pt-16 pb-2 items-center justify-start gap-[95px] text-left text-base text-gray-black font-body-regular-600 lg:pl-[120px] lg:pr-[120px]">
+      <div className=" flex flex-col pt-16 pb-2 items-center justify-start gap-[95px] text-left text-base text-gray-black font-body-regular-600">
         <div className="flex flex-row items-center justify-start">
           <div className="flex flex-row flex-wrap items-end justify-start gap-[16px]">
             <div className="flex flex-row items-start justify-start gap-[8px]">
