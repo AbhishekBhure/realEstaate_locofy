@@ -42,9 +42,9 @@ const RentPropertiesContainer = () => {
         href="/properties"
         className="rounded bg-primary-500 flex flex-row py-3 px-6 items-start justify-start text-base text-gray-white hover:text-gray-white"
       >
-        <Link className="relative leading-[24px] font-medium">
+        <div className="relative leading-[24px] font-medium">
           Load more listing
-        </Link>
+        </div>
       </Link>
     </div>
   );
